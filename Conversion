@@ -1,0 +1,55 @@
+print("===== CONVERSION CALCULATOR =====")
+
+print("1. Temperature")
+print("2. Distance")
+print("3. Time")
+print("4. Weight")
+
+choice = int(input("Choose option: "))
+
+if choice == 1:
+    print("1. Celsius to Fahrenheit")
+    print("2. Fahrenheit to Celsius")
+    c = int(input("Choose: "))
+    if c == 1:
+        x = float(input("Enter Celsius: "))
+        print("Fahrenheit =", (x * 9/5) + 32)
+    else:
+        x = float(input("Enter Fahrenheit: "))
+        print("Celsius =", (x - 32) * 5/9)
+
+elif choice == 2:
+    print("1. Km to Meter")
+    print("2. Meter to Km")
+    d = int(input("Choose: "))
+    if d == 1:
+        x = float(input("Enter Km: "))
+        print("Meters =", x * 1000)
+    else:
+        x = float(input("Enter Meters: "))
+        print("Km =", x / 1000)
+
+elif choice == 3:
+    print("1. Hours to Minutes")
+    print("2. Minutes to Hours")
+    t = int(input("Choose: "))
+    if t == 1:
+        x = float(input("Enter Hours: "))
+        print("Minutes =", x * 60)
+    else:
+        x = float(input("Enter Minutes: "))
+        print("Hours =", x / 60)
+
+elif choice == 4:
+    print("1. Kg to Gram")
+    print("2. Gram to Kg")
+    w = int(input("Choose: "))
+    if w == 1:
+        x = float(input("Enter Kg: "))
+        print("Grams =", x * 1000)
+    else:
+        x = float(input("Enter Grams: "))
+        print("Kg =", x / 1000)
+
+else:
+    print("Invalid choice")
