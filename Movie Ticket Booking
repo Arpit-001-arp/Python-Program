@@ -1,0 +1,32 @@
+print("===== MOVIE TICKET BOOKING =====")
+
+print("Movies Available:")
+print("1. Avengers")
+print("2. Pathaan")
+print("3. KGF 2")
+
+movie = int(input("Choose movie number: "))
+
+if movie == 1:
+    name = "Avengers"
+    price = 200
+elif movie == 2:
+    name = "Pathaan"
+    price = 180
+elif movie == 3:
+    name = "KGF 2"
+    price = 220
+else:
+    print("Invalid movie choice")
+    exit()
+
+tickets = int(input("How many tickets do you want?: "))
+
+total = price * tickets
+
+print("===== BOOKING DETAILS =====")
+print("Movie Name:", name)
+print("Tickets:", tickets)
+print("Price per Ticket:", price)
+print("Total Amount:", total)
+print("Booking Successful!")
