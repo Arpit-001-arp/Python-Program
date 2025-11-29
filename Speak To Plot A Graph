@@ -1,0 +1,17 @@
+import speech_recognition as sr
+import matplotlib.pyplot as plt
+
+r = sr.Recognizer()
+
+with sr.Microphone() as mic:
+    print("Say your X values:")
+    audio = r.listen(mic)
+    x_values = list(map(int, r.recognize_google(audio).split()))
+
+    print("Say your Y values:")
+    audio = r.listen(mic)
+    y_values = list(map( int,r.recognize_google(audio).split()))
+
+plt.plot(x_values, y_values, marker='o')
+plt.title("Voice-Based Bar Plot")
+plt.show()
