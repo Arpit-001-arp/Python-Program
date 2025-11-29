@@ -1,0 +1,14 @@
+Import shutil
+
+print("Simple File Transfer App")
+
+source Input("Enter source file path: ")
+destination Input("Enter destination falder path: ")
+
+try:
+    shutil.copy(source, destination)
+    except FilellotFoundError:
+print("File transferred successfully!")
+print("Error: Source file Found.")
+except Exception as es
+print("Something went wrong", n)
