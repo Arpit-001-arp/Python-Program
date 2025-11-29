@@ -1,0 +1,46 @@
+import streamlit as st
+
+st.title(" School Marks Report System")
+
+name = st.text_input("Enter Student Name")
+
+st.write("Enter Marks (out of 100)")
+s1 = st.number_input("Hindi", min_value=0, max_value=100, step=1)
+s2 = st.number_input("English", min_value=0, max_value=100, step=1)
+s3 = st.number_input("Maths", min_value=0, max_value=100, step=1)
+s4 = st.number_input("Science", min_value=0, max_value=100, step=1)
+s5 = st.number_input("Social Science", min_value=0, max_value=100, step=1)
+
+if st.button("Generate Result"):
+    total = s1 + s2 + s3 + s4 + s5
+    percentage = total / 5
+
+    if percentage >= 33:
+        result = "PASS "
+    else:
+        result = "FAIL "
+
+    report = f"""
+        SCHOOL MARKS REPORT
+        ------------------------------
+        Student Name : {name}
+        Hindi        : {s1}
+        English      : {s2}
+        Maths        : {s3}
+        Science      : {s4}
+        S.St         : {s5}
+        ------------------------------
+        Total Marks  : {total} / 500
+        Percentage   : {percentage:.2f}%
+        Result       : {result}
+        ------------------------------
+    """
+
+    st.text_area("Generated Report", report, height=260)
+
+    st.download_button(
+        label="Download Report (.txt)",
+        data=report,
+        file_name="marks_report.txt",
+        mime="text/plain"
+    )
