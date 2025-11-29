@@ -1,0 +1,9 @@
+import pyttsx3
+
+engine = pyttsx3.init()
+
+print("Enter text to speak:")
+text = input()
+
+engine.say(text)
+engine.runAndWait()
